@@ -10,14 +10,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.wimoor.util.SpringUtil;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-
+@EnableWebMvc
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableCaching
-@ComponentScan
 public class ERPApplication {
 
     public static void main(String[] args) {

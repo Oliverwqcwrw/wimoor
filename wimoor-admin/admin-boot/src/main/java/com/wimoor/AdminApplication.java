@@ -8,11 +8,12 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.wimoor.util.SpringUtil;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+@EnableWebMvc
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableCaching
-@ComponentScan
 public class AdminApplication {
 
     public static void main(String[] args) {

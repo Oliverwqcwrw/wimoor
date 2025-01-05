@@ -11,13 +11,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.wimoor.util.SpringUtil;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+@EnableWebMvc
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableCaching(proxyTargetClass=true)
 @EnableScheduling
-@ComponentScan
 @EnableTransactionManagement
 public class AmazonApplication { 
 

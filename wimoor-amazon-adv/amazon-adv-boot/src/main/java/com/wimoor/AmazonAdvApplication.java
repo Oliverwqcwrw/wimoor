@@ -11,9 +11,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.wimoor.util.SpringUtil;
 
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import tk.mybatis.spring.annotation.MapperScan;
  
-
+@EnableWebMvc
 @SpringBootApplication(scanBasePackages ={"com.wimoor.amazon.adv.*"})
 @EnableFeignClients
 @EnableCaching

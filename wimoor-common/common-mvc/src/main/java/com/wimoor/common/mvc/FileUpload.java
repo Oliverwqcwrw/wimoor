@@ -17,9 +17,9 @@ public class FileUpload   {
   
   public static final String FILE_PATH = "/upload/";  
  
-  @Value("${config.photo-server}")
+  //@Value("${config.photo-server}")
   public String photoServer;
-  @Value("${config.photo-server-url}")
+  //@Value("${config.photo-server-url}")
   public String photoServerUrl;
   
   public   File getFile(String fileName) {  

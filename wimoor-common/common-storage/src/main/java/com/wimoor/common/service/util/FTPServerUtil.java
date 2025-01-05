@@ -26,7 +26,7 @@ public class FTPServerUtil  {
     @Setter
     String ftpHost;
     
-    @Value("${config.photo-server-url}")
+    //@Value("${config.photo-server-url}")
     public String photoServerUrl;
     
 	 public FTPClient ftpClient = null;

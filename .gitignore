@@ -1,14 +1,32 @@
-wimoor-admin/target/
-wimoor-amazon/target/
-wimoor-auth/target/
-wimoor-common/target/
-wimoor-erp/target/
-wimoor-gateway/target/
-wimoor-shopee/target/
-target
-/wimoor-admin/admin-boot/*.factorypath
-*.factorypath
-.factorypath
+target/
+!.mvn/wrapper/maven-wrapper.jar
+build
+.gradle
+bin/
+node_modules
+package-lock.json
+logs/
+.DS_Store
+
+### STS ###
 .apt_generated
-.apt_generated_tests
-*.classpath
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

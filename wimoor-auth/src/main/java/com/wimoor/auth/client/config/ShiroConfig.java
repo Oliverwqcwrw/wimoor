@@ -51,10 +51,10 @@ public class ShiroConfig {
     public static String authserver;
     @Autowired
     RedisCacheManager cacheManager;
-	@Value("${config.photo-server}")
+//	@Value("${config.photo-server}")
 	private String photo_server;
 	
-	@Value("${config.photo-server-url}")
+//	@Value("${config.photo-server-url}")
 	private String photo_server_url;
 	
 	@Value("${config.ui-server}")
