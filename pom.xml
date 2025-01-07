@@ -35,6 +35,7 @@
           <javax-validator.version>1.1.0.Final</javax-validator.version>
           <hutool.version>5.8.5</hutool.version>
           <spring-cloud-starter-seata.version>2021.0.5.0</spring-cloud-starter-seata.version>
+		  <docker.registry.name>aolifu</docker.registry.name>
      </properties>
      
       <dependencies>
