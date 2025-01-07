@@ -15,4 +15,4 @@ mvn clean package -Dmaven.test.skip=true
 mvn dockerfile:build -Ddocker.image.tag=$VERSION_TAG
 
 # 推送 Docker 镜像
-docker push aolifu/wimoor-admin:$VERSION_TAG
+docker push aolifu/admin-boot:$VERSION_TAG
