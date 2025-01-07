@@ -11,4 +11,4 @@ services:
       - spring.cloud.nacos.password=oneanswer
       - TZ=Asia/Shanghai
     volumes:
-      - /root/wimoor/wimoor-admin/logs:/root/wimoor/wimoor-admin/logs
+      - /root/log4wimoor/wimoor-admin/admin-boot/logs:/root/log4wimoor/wimoor-admin/logs
