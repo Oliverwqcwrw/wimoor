@@ -1,0 +1,14 @@
+version: '3'
+services:
+  webapp:
+    image: aolifu/wimoor-admin:v1
+    container_name: wimoor-admin
+    network_mode: "host"
+    ports:
+      - "8085:8085"
+    environment:
+      - spring.cloud.nacos.username=oneanswer
+      - spring.cloud.nacos.password=oneanswer
+      - TZ=Asia/Shanghai
+    volumes:
+      - /root/wimoor/wimoor-admin/logs:/root/wimoor/wimoor-admin/logs

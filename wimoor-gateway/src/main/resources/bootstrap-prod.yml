@@ -5,6 +5,8 @@ spring:
     name: wimoor-gateway
   cloud:
     nacos:
+      username: oneanswer
+      password: oneanswer
       discovery:
         server-addr: localhost:8848
         namespace: prod
@@ -16,7 +18,10 @@ spring:
         shared-configs[0]: 
           data-id: wimoor-common
           refresh: true
+          group: E-COMMERCE_GROUP
         shared-configs[1]: 
           data-id: wimoor-commom-ext
           refresh: true
+          group: E-COMMERCE_GROUP
+        group: E-COMMERCE_GROUP
 

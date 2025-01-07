@@ -82,7 +82,7 @@ public class ApiBuildService implements InitializingBean {
     public void afterPropertiesSet() {
         Assert.notBlank(accessKeyId, "AWSAuthenticationCredentials accessKeyId 为空");
         Assert.notBlank(secretKey, "AWSAuthenticationCredentials secretKey为空");
-        Assert.notBlank(roleArn, "AWSAuthenticationCredentialsProvider roleArn为空");
+        //Assert.notBlank(roleArn, "AWSAuthenticationCredentialsProvider roleArn为空");
         Assert.notBlank(clientId, "LWAAuthorizationCredentials clientId为空");
         Assert.notBlank(clientSecret, "LWAAuthorizationCredentials clientSecret为空");
  
