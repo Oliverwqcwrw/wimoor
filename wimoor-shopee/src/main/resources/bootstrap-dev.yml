@@ -7,9 +7,11 @@ spring:
     name: wimoor-shopee
   cloud:
     nacos:
+      username: oneanswer
+      password: oneanswer
       # 注册中心
       discovery:
-        server-addr: localhost:8848
+        server-addr: nacos.server.aolifu.org:8848
       # 配置中心
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
@@ -18,7 +20,10 @@ spring:
         shared-configs[0]: 
           data-id: wimoor-common
           refresh: true
+          group: E-COMMERCE_GROUP
         shared-configs[1]: 
           data-id: wimoor-commom-ext
           refresh: true
+          group: E-COMMERCE_GROUP
+        group: E-COMMERCE_GROUP
 
