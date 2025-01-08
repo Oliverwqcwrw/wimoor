@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import tk.mybatis.spring.annotation.MapperScan;
  
 @EnableWebMvc
-@SpringBootApplication()
+@SpringBootApplication
 @EnableFeignClients
 @EnableCaching
 @EnableDiscoveryClient
