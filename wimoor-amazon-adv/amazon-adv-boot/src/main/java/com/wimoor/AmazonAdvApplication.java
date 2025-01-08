@@ -15,13 +15,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import tk.mybatis.spring.annotation.MapperScan;
  
 @EnableWebMvc
-@SpringBootApplication(scanBasePackages ={"com.wimoor.amazon.adv.*"})
+@SpringBootApplication()
 @EnableFeignClients
 @EnableCaching
 @EnableDiscoveryClient
 @EnableScheduling
-@MapperScan({"com.wimoor.amazon.adv.*.dao"})
-@ComponentScan(value = {"com.wimoor.amazon.adv.*"})
 public class AmazonAdvApplication {
 
     public static void main(String[] args) {
