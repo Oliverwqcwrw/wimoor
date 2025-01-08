@@ -1,0 +1,14 @@
+version: '3'
+services:
+  webapp:
+    image: aolifu/amazon-boot:v1
+    container_name: amazon-boot
+    network_mode: "host"
+    ports:
+      - "8085:8085"
+    environment:
+      - spring.cloud.nacos.username=oneanswer
+      - spring.cloud.nacos.password=oneanswer
+      - TZ=Asia/Shanghai
+    volumes:
+      - /root/log4wimoor/amazon-boot/logs:/root/log4wimoor/amazon-boot/logs
