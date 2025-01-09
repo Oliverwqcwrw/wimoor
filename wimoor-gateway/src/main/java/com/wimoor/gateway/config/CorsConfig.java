@@ -16,8 +16,10 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*") // 允许来自http://localhost的请求
-                .allowedMethods("*") // 允许的HTTP方法
-                .allowedHeaders("*"); // 允许的HTTP头部
+                .allowedOriginPatterns("*") // 使用 allowedOriginPatterns 而不是 allowedOrigins
+                .allowedMethods("*")
+                .allowedHeaders("*")
+                .allowCredentials(true) // 如果不需要发送凭证信息，可以设置为 false
+                .maxAge(3600); // 设置预检请求缓存时间
     }
 }
