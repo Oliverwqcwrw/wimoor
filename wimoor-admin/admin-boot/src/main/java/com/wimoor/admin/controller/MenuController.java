@@ -3,6 +3,7 @@ package com.wimoor.admin.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -83,9 +84,15 @@ public class MenuController {
     @GetMapping("/route")
     public Result<?> getRouteList() {
     	UserInfo userInfo = UserInfoContext.get();
-        List<RouteVO> routeList = menuService.listRoute(userInfo);
-        log.debug("路由加载");
-        return Result.success(routeList);
+        log.info("打印用户信息:{}", JSON.toJSONString(userInfo));
+        try {
+            List<RouteVO> routeList = menuService.listRoute(userInfo);
+            log.debug("路由加载");
+            return Result.success(routeList);
+        } catch (Exception e) {
+            log.error("route 发生异常",e);
+            return Result.failed();
+        }
     }
 
     @ApiOperation(value = "清除用户缓存")
