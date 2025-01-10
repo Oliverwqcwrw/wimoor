@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
@@ -37,6 +38,7 @@ import reactor.core.publisher.Mono;
 @ConfigurationProperties(prefix = "security")
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class SecurityGlobalFilter implements GlobalFilter, Ordered {
 
 	@Setter
@@ -143,6 +145,7 @@ public class SecurityGlobalFilter implements GlobalFilter, Ordered {
                 return ResponseUtils.writeErrorInfo(response, ResultCode.TOKEN_ACCESS_FORBIDDEN);
             }
             String user = stringRedisTemplate.opsForValue().get(token);
+            log.info("打印当前登录用户:{}", JSONObject.toJSONString(user));
             stringRedisTemplate.expire(token,3,java.util.concurrent.TimeUnit.HOURS);
             JSONObject jsonObject=JSONObject.parseObject(user);
             UserInfo stu=(UserInfo)JSONObject.toJavaObject(jsonObject, UserInfo.class);

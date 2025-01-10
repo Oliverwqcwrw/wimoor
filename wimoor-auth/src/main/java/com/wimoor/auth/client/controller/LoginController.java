@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,7 @@ import cn.hutool.crypto.Padding;
 import feign.FeignException;
 @EnableAutoConfiguration
 @Controller
+@Slf4j
 public class LoginController {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
@@ -235,11 +237,13 @@ public class LoginController {
 				 String jsonuser = JSONObject.toJSONString(user);
 				 int expiresIn =3600;
 				 stringRedisTemplate.opsForValue().set(sessionkey,jsonuser,expiresIn,java.util.concurrent.TimeUnit.SECONDS);
+				 log.info("设置redis 成功:{}", jsonuser);
 			     return result;
 			}else {
 				return result;
 			}
 		}catch(FeignException e) {
+			log.error("发生异常:",e);
 			throw new BizException(BizException.getMessage(e, "登录失败"));
 		}catch(Exception e) {
 			return Result.failed("登录失败");
